@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-// Apenas uma copia de Cliente1, mudando apenas o nome do usuario 
 public class Cliente2 {
 	public static void main(String[] args) {
 
@@ -12,7 +11,7 @@ public class Cliente2 {
 			Socket socket = new Socket("localhost", 2130);
 			DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 			DataInputStream in = new DataInputStream(socket.getInputStream());
-			out.writeUTF("Pedro");
+			out.writeUTF("Alex");
 			
 			ThreadLeitura tl = new ThreadLeitura(socket, in);
 			tl.start();
@@ -21,10 +20,8 @@ public class Cliente2 {
 			te.start();
 			
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

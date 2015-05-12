@@ -1,6 +1,5 @@
 import java.net.Socket;
 
-// Um POJO de Usuário, com socket e nome correspondentes
 public class User {
 	private Socket socket;
 	private String nome;

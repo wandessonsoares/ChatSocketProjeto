@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-// Thread para que o cliente possa enviar um comando para o servidor qualquer momento 
 public class ThreadEscrita extends Thread{
 	Socket socket;
 	DataOutputStream out;
@@ -15,15 +14,12 @@ public class ThreadEscrita extends Thread{
 	}
 	
 	public void run(){
-		
-		// loop infinito
 		while(true){
-			String comando = teclado.nextLine(); // le uma string do teclado
+			String comando = teclado.nextLine();
 			
 			try {
-				out.writeUTF(comando); // envia a string lida para o servidor
+				out.writeUTF(comando); 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
